@@ -1,6 +1,7 @@
 ﻿using System;
 using Data_Structures.LinkedList;
 using Data_Structures.Stacks;
+using Data_Structures.Queues;
 
 namespace Data_Structures
 {
@@ -49,6 +50,65 @@ namespace Data_Structures
 
             Console.WriteLine("\nEnd Int Stack");
             // End Int Stack
+            // Start LinkedStack
+            Console.WriteLine("Start Linked Stack\n");
+
+            LinkedStack<int> linkedStack = new LinkedStack<int>(1);
+            linkedStack.Push(2);
+            linkedStack.Push(3);
+            Console.WriteLine($"Size {linkedStack.Size()}");
+            linkedStack.Push(4);
+            linkedStack.Push(5);
+
+            Console.WriteLine($"Pop {linkedStack.Pop()}");
+            Console.WriteLine($"Pop {linkedStack.Pop()}");
+            Console.WriteLine($"Pop {linkedStack.Peek()}");
+            while (!linkedStack.IsEmpty())
+                Console.WriteLine(linkedStack.Pop());
+            Console.WriteLine($"Empty {linkedStack.IsEmpty()}");
+            Console.WriteLine("\nEnd Linked Stack");
+            // End Linked Stack
+            // Start Int Queue
+            Console.WriteLine("Start Int Queue\n");
+
+            QueueInt iQ = new QueueInt(5);
+
+            iQ.Enqueue(1);
+            iQ.Enqueue(2);
+            iQ.Enqueue(3);
+            iQ.Enqueue(4);
+            iQ.Enqueue(5);
+
+            Console.WriteLine($"Dequeueing {iQ.Dequeue()}");
+            Console.WriteLine($"Dequeueing {iQ.Dequeue()}");
+            Console.WriteLine($"Dequeueing {iQ.Dequeue()}");
+            Console.WriteLine($"is empty? {iQ.IsEmpty()}");
+
+            while (!iQ.IsEmpty())
+                Console.WriteLine($"Dequeueing {iQ.Dequeue()}");
+
+            Console.WriteLine($"Is empty? {iQ.IsEmpty()}");
+            Console.WriteLine("\nend Int queue");
+            // End Int Queue
+            // Start Linked List Queue
+            Console.WriteLine("Start Queue\n");
+            Queue<string> que = new Queue<string>("1");
+            que.Enqueue("2");
+            que.Enqueue("3");
+            que.Enqueue("4");
+            que.Enqueue("5");
+
+            Console.WriteLine($"Dequeue {que.Dequeue()}");
+            Console.WriteLine($"Dequeue {que.Dequeue()}");
+            Console.WriteLine($"Peek {que.ViewFirst()}");
+            Console.WriteLine($"is empty? {que.IsEmpty()}");
+
+            while (!que.IsEmpty())
+                Console.WriteLine($"Dequeue {que.Dequeue()}");
+
+            Console.WriteLine($"is empty? {que.IsEmpty()}");
+            Console.WriteLine("\nend queue");
+            //End Linked List Queue
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Data_Structures.Stacks
 {
     class LinkedStack<T>
     {
-        private LinkedList.LinkedList<T> list = new LinkedList.LinkedList<T>();
+        private LinkedList.LinkedList<T> list = new();
 
         public LinkedStack() { }
 
