@@ -153,6 +153,8 @@ namespace Data_Structures.Queues
             if (IsEmpty())
                 return default;
 
+            heapSize--;
+
             int indexOfLastEl = Size() - 1;
             T removedData = this.heap.ElementAt(i);
             Swap(i, indexOfLastEl);
@@ -172,6 +174,7 @@ namespace Data_Structures.Queues
             return removedData;
         }
 
+        // for testing to ensure heap is invariant is maintained
         public bool IsMinHeap(int k)
         {
             int heapSize = Size();
@@ -180,6 +183,11 @@ namespace Data_Structures.Queues
 
             int left = 2 * k + 1;
             int right = 2 * k + 2;
+
+            if (left < heapSize && !Less(k, left))
+                return false;
+            if (right < heapSize && !Less(k, right))
+                return false;
 
             return IsMinHeap(left) && IsMinHeap(right);
         }
