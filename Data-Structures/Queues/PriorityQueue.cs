@@ -52,7 +52,7 @@ namespace Data_Structures.Queues
         {
             if (IsEmpty())
                 return default;
-            return heap.ElementAt(0);
+            return this.heap.ElementAt(0);
         }
 
         public T Poll()
@@ -63,7 +63,7 @@ namespace Data_Structures.Queues
         public bool Contains(T el)
         {
             for (int i = 0; i < Size(); i++)
-                if (heap.ElementAt(i).Equals(el))
+                if (this.heap.ElementAt(i).Equals(el))
                     return true;
             return false;
         }
@@ -81,8 +81,8 @@ namespace Data_Structures.Queues
 
         private bool Less(int i, int j)
         {
-            T node1 = heap.ElementAt(i);
-            T node2 = heap.ElementAt(j);
+            T node1 = this.heap.ElementAt(i);
+            T node2 = this.heap.ElementAt(j);
 
             return node1.CompareTo(node2) <= 0;
         }
@@ -125,8 +125,8 @@ namespace Data_Structures.Queues
 
         private void Swap(int i, int j)
         {
-            T el_i = heap.ElementAt(i);
-            T el_j = heap.ElementAt(j);
+            T el_i = this.heap.ElementAt(i);
+            T el_j = this.heap.ElementAt(j);
             
             heap[i] = el_j;
             heap[j] = el_i;
@@ -138,7 +138,7 @@ namespace Data_Structures.Queues
                 return false;
             for (int i = 0; i < Size(); i++)
             {
-                if (el.Equals(heap.ElementAt(i)))
+                if (el.Equals(this.heap.ElementAt(i)))
                 {
                     RemoveAt(i);
                     return true;
@@ -154,7 +154,7 @@ namespace Data_Structures.Queues
                 return default;
 
             int indexOfLastEl = Size() - 1;
-            T removedData = heap.ElementAt(i);
+            T removedData = this.heap.ElementAt(i);
             Swap(i, indexOfLastEl);
 
             heap.RemoveAt(indexOfLastEl);
@@ -162,11 +162,11 @@ namespace Data_Structures.Queues
             if (i == indexOfLastEl)
                 return removedData;
 
-            T el = heap.ElementAt(i);
+            T el = this.heap.ElementAt(i);
 
             Sink(i);
 
-            if (heap.ElementAt(i).Equals(el))
+            if (this.heap.ElementAt(i).Equals(el))
                 Swim(i);
 
             return removedData;
