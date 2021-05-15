@@ -109,6 +109,27 @@ namespace Data_Structures
             Console.WriteLine($"is empty? {que.IsEmpty()}");
             Console.WriteLine("\nend queue");
             //End Linked List Queue
+            // Start Priority Queue
+            Console.WriteLine("Starting Priority Queue\n");
+            int[] arr = new int[5] { 5, 3, 14, 12, 16};
+            PriorityQueue<int> pq = new(arr);
+
+            Console.WriteLine($"Peek {pq.Peek()}");
+            Console.WriteLine($"Dequeue {pq.Poll()}");
+            Console.WriteLine($"Peek {pq.Peek()}");
+            Console.WriteLine($"Dequeue {pq.Poll()}");
+            Console.WriteLine($"Peek {pq.Peek()}");
+            pq.Add(100);
+            Console.WriteLine($"Peek {pq.Peek()}");
+            pq.Add(23);
+            Console.WriteLine($"Peek {pq.Peek()}");
+            Console.WriteLine($"Contains 23 {pq.Contains(23)}");
+
+            pq.EmptyQueue();
+            Console.WriteLine($"Is Queue empty {pq.IsEmpty()}");
+
+            Console.WriteLine("\nEnd Priority Queue");
+            // End Priority Queue
         }
     }
 }

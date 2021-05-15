@@ -194,7 +194,7 @@ namespace Data_Structures.Queues
 
         public override string ToString()
         {
-            return heap.ToString();
+            return base.ToString();
         }
     }
 }
